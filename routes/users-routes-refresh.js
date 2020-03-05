@@ -8,6 +8,6 @@ const usersControllers = require('../controllers/users-controller');
 
 router.use(checkAuth);
 
-router.post('/refresh', usersControllers.loginRefresh);
+router.post('/', usersControllers.loginRefresh);
 
 module.exports = router;
