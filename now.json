@@ -3,12 +3,12 @@
     "builds": [{ "src": "index.js", "use": "@now/node-server" }],
     "routes": [
         {
-          "src": "/users",
+          "src": "/api/users",
           "dest": "/index.js",
           "methods": ["GET","POST","PATCH","DELETEC"]
         },
         {
-          "src": "/places",
+          "src": "/api/places",
           "dest": "/index.js",
           "methods": ["GET","POST","PATCH","DELETEC"]
         }
