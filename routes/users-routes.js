@@ -18,7 +18,7 @@ router.post('/signup',
 
 router.use(checkAutho);
 
-router.post('/login', usersControllers.login);
+router.get('/login', usersControllers.login);
 
 router.use(checkAuth);
 
