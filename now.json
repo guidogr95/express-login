@@ -8,7 +8,12 @@
         {
           "src": "/(.*)",
           "dest": "/index.js",
-          "methods": ["OPTIONS","GET","POST"]
+          "methods": ["OPTIONS","GET"]
+        },
+        {
+          "src": "/users/login",
+          "dest": "/index.js",
+          "methods": ["OPTIONS","POST"]
         }
       ]
 }
