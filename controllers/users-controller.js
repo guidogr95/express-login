@@ -64,9 +64,6 @@ const signUp = async (req, res, next) => {
 };
 
 const login = async (req, res, next) => {
-    if (req.method === 'OPTIONS') {
-        return next();
-    }
     const { email, password } = req.body;
     let existingUser;
     try {
