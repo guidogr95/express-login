@@ -6,7 +6,7 @@ const checkAutho = require('../middleware/check-autho');
 
 const usersControllers = require('../controllers/users-controller');
 
-router.get('/', usersControllers.getUsers);
+router.post('/', usersControllers.login);
 
 router.post('/signup', 
     [
