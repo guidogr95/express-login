@@ -130,17 +130,15 @@ const loginRefresh = async (req, res, next) => {
     res.json({ userId: existingUser.id, email: existingUser.email, token: token });
 };
 
-const chatkit = new Chatkit.default({
-    instanceLocator: 'v1:us1:fe088103-8b4d-4e06-a93c-4d2fb3f963be',
-    key: 'd6b63c39-9c58-459d-a34b-a8d39eb6124d:l8I+uX85fbJCwMZVSrlyE4z2f7ckYbgbirHv5pfhDgE='
-})
-
 const chatUsers = (req,res,next) => {
+    const chatkit = new Chatkit.default({
+        instanceLocator: 'v1:us1:fe088103-8b4d-4e06-a93c-4d2fb3f963be',
+        key: 'd6b63c39-9c58-459d-a34b-a8d39eb6124d:l8I+uX85fbJCwMZVSrlyE4z2f7ckYbgbirHv5pfhDgE='
+    })
     const { username } = req.body;
     let now = new Date();
     now.setMinutes(now.getMinutes() + 1)
     now = new Date(now);
-    console.log(now)
     let userid;
     if (username === 'guido') {
         userid = 'guido'
