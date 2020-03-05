@@ -6,12 +6,7 @@
     }],
     "routes": [
         {
-          "src": "/api/users/login",
-          "dest": "/index.js",
-          "methods": ["POST","OPTIONS"]
-        },
-        {
-          "src": "/api/users",
+          "src": "/(.*)",
           "dest": "/index.js",
           "methods": ["OPTIONS","GET","POST"]
         }
