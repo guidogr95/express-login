@@ -2,13 +2,13 @@
     "version": 2,
     "builds": [{
       "src": "index.js",
-      "use": "@now/node-server"
+      "use": "@now/node"
     }],
     "routes": [
         {
           "src": "/api/users",
           "dest": "/index.js",
-          "methods": ["POST","OPTIONS","GET","PATCH","DELETE"]
+          "methods": ["GET"]
         }
       ]
 }
