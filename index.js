@@ -38,7 +38,7 @@ app.use((error, req, res, next) => {
 
 mongoose.connect('mongodb+srv://guidogr95:CRHcjmMgTUnchT0o@cluster0-wy0qn.mongodb.net/users?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
 .then(() => {
-    app.listen(8000)
+    app.listen(3000)
 })
 .catch(err => {
     console.log(err)
