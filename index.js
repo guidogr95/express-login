@@ -18,8 +18,8 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/places', placesRoutes);
-app.use('/users', usersRoutes);
+app.use('/api/places', placesRoutes);
+app.use('/api/users', usersRoutes);
 //handling request to non-existent routes
 app.use((req, res, next) => {
  const error = new HttpError('Could not find this route', 404);
