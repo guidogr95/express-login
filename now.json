@@ -1,13 +1,24 @@
 {
     "version": 2,
-    "builds": [{
-      "src": "index.js",
-      "use": "@now/node-server"
-    }],
+    "builds": [
+      {
+        "src": "index.js",
+        "use": "@now/node"
+      },
+      {
+        "src": "login.js",
+        "use": "@now/node"
+      }
+    ],
     "routes": [
         {
           "src": "/(.*)",
           "dest": "/index.js",
+          "methods": ["OPTIONS","GET","POST"]
+        },
+        {
+          "src": "/api/users/login",
+          "dest": "/login.js",
           "methods": ["OPTIONS","GET","POST"]
         }
       ]
