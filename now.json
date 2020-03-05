@@ -6,7 +6,7 @@
     }],
     "routes": [
         {
-          "src": "/api/users",
+          "src": "/users",
           "dest": "/index.js",
           "methods": ["POST","OPTIONS","GET","PATCH","DELETE"]
         }
