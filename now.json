@@ -6,14 +6,14 @@
     }],
     "routes": [
         {
+          "src": "/api/users/login",
+          "dest": "/index.js",
+          "methods": ["POST","OPTIONS"]
+        },
+        {
           "src": "/api/users",
           "dest": "/index.js",
           "methods": ["OPTIONS","GET"]
-        },
-        {
-          "src": "/api/users/login",
-          "dest": "/index.js",
-          "methods": ["OPTIONS","POST"]
         }
       ]
 }
