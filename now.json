@@ -8,6 +8,18 @@
       {
         "src": "login.js",
         "use": "@now/node"
+      },
+      {
+        "src": "users.js",
+        "use": "@now/node"
+      },
+      {
+        "src": "authenticate.js",
+        "use": "@now/node"
+      },
+      {
+        "src": "apiauthenticate.js",
+        "use": "@now/node"
       }
     ],
     "routes": [
@@ -19,6 +31,21 @@
         {
           "src": "/api/users/login",
           "dest": "/login.js",
+          "methods": ["OPTIONS","GET","POST"]
+        },
+        {
+          "src": "/api/users/refresh",
+          "dest": "/apiauthenticate.js",
+          "methods": ["OPTIONS","GET","POST"]
+        },
+        {
+          "src": "/chat/users",
+          "dest": "/users.js",
+          "methods": ["OPTIONS","GET","POST"]
+        },
+        {
+          "src": "/chat/authenticate",
+          "dest": "/authenticate.js",
           "methods": ["OPTIONS","GET","POST"]
         }
       ]
