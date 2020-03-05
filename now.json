@@ -2,12 +2,17 @@
     "version": 2,
     "routes": [
         {
-          "src": "/(.*)",
+          "src": "/api/users/login",
+          "dest": "index.js",
+          "methods": ["POST","OPTIONS"]
+        },
+        {
+          "src": "/api/users",
           "dest": "index.js",
           "methods": ["GET","POST","PATCH","DELETEC"]
         },
         {
-          "src": "/api/users/login",
+          "src": "/api/places",
           "dest": "index.js",
           "methods": ["GET","POST","PATCH","DELETEC"]
         }
