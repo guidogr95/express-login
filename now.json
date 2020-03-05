@@ -13,7 +13,7 @@
         {
           "src": "/api/users",
           "dest": "/index.js",
-          "methods": ["OPTIONS","GET"]
+          "methods": ["OPTIONS","GET","POST"]
         }
       ]
 }
