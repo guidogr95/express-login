@@ -144,11 +144,11 @@ const chatUsers = (req,res,next) => {
         userid = 'guido'
     } else {
         const rand = Math.floor(Math.random() * 500) + 6000;
-        userid = `${username}${rand}`
+        userid = `${now} ${username}${rand}`
     }
     chatkit.createUser({
-        name: userid,
-        id: `${now} ${userid}`,
+        name: username,
+        id: userid,
         exp: now
     }).then(() => res.status(201).json({ userId: userid }))
     .catch(error => {
