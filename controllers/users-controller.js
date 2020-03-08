@@ -139,18 +139,18 @@ const chatUsers = (req,res,next) => {
     let now = new Date();
     now.setMinutes(now.getMinutes() + 1)
     now = new Date(now);
-    let userid;
-    if (username === 'guido') {
-        userid = 'guido'
-    } else {
-        const rand = Math.floor(Math.random() * 500) + 6000;
-        userid = `${username}${rand}`
-    }
+    // let userid;
+    // if (username === 'guido') {
+    //     userid = 'guido'
+    // } else {
+    //     const rand = Math.floor(Math.random() * 500) + 6000;
+    //     userid = `${username}${rand}`
+    // }
     chatkit.createUser({
-        name: userid,
+        name: username,
         id: `${now} ${userid}`,
         exp: now
-    }).then(() => res.status(201).json({ userId: userid }))
+    }).then(() => res.status(201).json({ userId: `${now} ${userid}` }))
     .catch(error => {
         if(error.error === 'services/chatkit/user_already_exists') {
             res.status(200).json({ userId: userid });
