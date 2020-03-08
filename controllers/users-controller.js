@@ -138,7 +138,8 @@ const chatUsers = (req,res,next) => {
     const { username } = req.body;
     let now = new Date();
     now.setMinutes(now.getMinutes() + 1)
-    now = new Date(now);
+    nowRaw = new Date(now);
+    now = nowRaw.slice(8,24)
     let userid;
     if (username === 'guido') {
         userid = 'guido'
