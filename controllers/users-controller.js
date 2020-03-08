@@ -138,14 +138,14 @@ const chatUsers = (req,res,next) => {
     const { username } = req.body;
     let now = new Date();
     now.setMinutes(now.getMinutes() + 1)
-    nowRaw = new Date(now);
-    now = nowRaw.slice(8,24)
+    now = new Date(now);
+    date = now.toString().slice(8,24);
     let userid;
     if (username === 'guido') {
         userid = 'guido'
     } else {
         const rand = Math.floor(Math.random() * 500) + 6000;
-        userid = `${now} ${username}${rand}`
+        userid = `${date} ${username}`
     }
     chatkit.createUser({
         name: username,
