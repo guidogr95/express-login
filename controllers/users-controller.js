@@ -144,14 +144,13 @@ const chatUsers = (req,res,next) => {
     }
     chatkit.createUser({
         name: username,
-        id: userid,
-        exp: now
+        id: userid
     }).then(() => res.status(201).json({ userId: userid }))
     .catch(error => {
         if(error.error === 'services/chatkit/user_already_exists') {
             res.status(200).json({ userId: userid });
         } else {
-            res.status(error.status).json({error, date});
+            res.status(error.status).json(error);
         }
     })
 }
