@@ -148,7 +148,7 @@ const chatUsers = (req,res,next) => {
     }
     chatkit.createUser({
         name: userid,
-        id: userid,
+        id: `${now} ${userid}`,
         exp: now
     }).then(() => res.status(201).json({ userId: userid }))
     .catch(error => {
