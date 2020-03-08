@@ -140,7 +140,6 @@ const chatUsers = (req,res,next) => {
     if (username === 'guido') {
         userid = 'guido'
     } else {
-        const rand = Math.floor(Math.random() * 500) + 6000;
         userid = `${date} ${username}`
     }
     chatkit.createUser({
@@ -152,7 +151,7 @@ const chatUsers = (req,res,next) => {
         if(error.error === 'services/chatkit/user_already_exists') {
             res.status(200).json({ userId: userid });
         } else {
-            res.status(error.status).json(error);
+            res.status(error.status).json({error, date});
         }
     })
 }
